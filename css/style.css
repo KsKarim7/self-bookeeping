@@ -4,3 +4,6 @@ h1 {
 .another-half {
   background-color: rgb(225, 235, 238);
 }
+.bg-info {
+  border: none;
+}
