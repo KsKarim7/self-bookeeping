@@ -23,39 +23,43 @@
               <div class="col-6 ">
                 <img src="img/33337.jpg" alt="" width="100%" >
               </div>
-              <div class="col-4 another-half text-center ">
+              <div class="col-lg-4 col-12 another-half text-center ">
                   <div class="my-4 " >
                     <h5 class="fw-bolder">Income</h5>
                     <br>
-                    <h6 id="income">Income: <input id="total-income" type="text" placeholder="enter your total income"></h6>
+                    <h6 >Income: <input id="total-income" type="number" placeholder="enter your total income"></h6>
                     <br>
                     <h5 class="fw-bolder">Expenses</h5>
                     <br>
-                    <h6 class="mb-3" id="food">Food: <input type="text" id="food-expense"></h6>
-                    <h6 class="mb-3" id="rent">Rent: <input type="text" id="rent-expense"></h6>
-                    <h6 id="clothes">Clothes: <input type="text" id="cloth-expense" ></h6>
+                    <h6 class="mb-3" id="food">Food: <input type="number" id="food-expense"></h6>
+                    <h6 class="mb-3" id="rent">Rent: <input type="number" id="rent-expense"></h6>
+                    <h6 id="clothes">Clothes: <input type="number" id="cloth-expense" ></h6>
                     <br>
                     <button id="calculate-button" class="fw-bolder bg-info px-5 rounded py-2 text-white ">Calculate</button>
                     <br>
                     <br>
                     <h5 class="fw-bolder">Total Expenses: <span id="total-expense">00</span></h5>
                     <br>
-                    <h5 class="fw-bolder">Balance: <span id="remaining-balance">00</span></h5>
+                    <h5 class="fw-bolder">Balance: <span id="balance">00</span></h5>
                     <br>
                     <div class="d-flex  justify-content-center">
-                      <h6>Save: <input id="saving-amount" type="text" name="" id="" size="10"></h6>
+                      <h6>Save: <input id="saving-amount" type="number" name="" id="" size="10"></h6>
                       <h6 class="mx-3">%</h6>
                       <button id="save-button" class="fw-bolder bg-info px-5 rounded py-2 text-white ">Save</button>
                     </div>
                     <br>
                     <h5 class="fw-bolder mb-3">Saving Amount: <span id="saved-amount">00</span></h5>
-                    <h5 class="fw-bolder mb-4">Remaining Balance: <span id="balance">00</span></h5>
+                    <h5 class="fw-bolder mb-4">Remaining Balance: <span id="remaining-balance">00</span></h5>
                     
 
                   </div>
                 
               </div>
             </div>
+            <div class="notify-section">
+              <p id="saving-fail" class="notify d-none">❌You currently don't have enough money for saving</p>
+              <p id="expense-error" class="notify d-none">❌You total expense crosses the amount of your monthly income</p>
+          </div>
     </main>
     
     
