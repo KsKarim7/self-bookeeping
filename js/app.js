@@ -3,9 +3,11 @@ function catchId(id){
     return document.getElementById(id)
 }
 
+
+// function for input values
 function getValue(fieldId, isInput){
 
-    const inputField = document.getElementById(fieldId);
+    const inputField = catchId(fieldId);
     let valueInText = ' ';
     if(isInput == true){
         valueInText = inputField.value;  
@@ -18,10 +20,11 @@ function getValue(fieldId, isInput){
 }
 
 
-
+// calculating all the expenses 
 catchId('calculate-button').addEventListener('click',function(){
     // income field 
-    const totalIncome = getValue('total-income',true);    
+    const totalIncome = getValue('total-income',true); 
+    (totalIncome,'total-income')   
     // food expenses 
     const foodExpense = getValue('food-expense',true);
 
@@ -47,19 +50,16 @@ catchId('calculate-button').addEventListener('click',function(){
 
     }
     
-    // console.log(totalExpense);
-    // console.log(balance);
-    
     // clear expenses inputs 
-    // foodExpense.value = ' ';
-    // rentExpense.value = ' ';
-    // clothExpense.value = ' ';
+    foodExpense.value = ' ';
+    rentExpense.value = ' ';
+    clothExpense.value = ' ';
     
 
     
    
 })
-
+// balance i want to save to from my total income 
 catchId('save-button').addEventListener('click',function(){
     const savingAmount = getValue('saving-amount',true);
     
@@ -70,15 +70,16 @@ catchId('save-button').addEventListener('click',function(){
     const finalSavedAmount2 =  totalIncome2 * savingAmount / 100;
     catchId('saved-amount').innerText = finalSavedAmount2; 
 
+    // final remaining balance after all the expenses and savings 
     const remainingBalance = getValue('remaining-balance');
     const previousBalance = getValue('balance');
         let finalSavedAmount = getValue('saved-amount');
     const finalRemainingBalance = previousBalance - finalSavedAmount;
-    // console.log(finalRemainingBalance);
-
+    
+    // error messages 
     if(finalSavedAmount < previousBalance){
             
-        console.log(finalRemainingBalance);
+        
             
         catchId('remaining-balance').innerText = finalRemainingBalance;
     }
@@ -88,70 +89,5 @@ catchId('save-button').addEventListener('click',function(){
         errorMessage.classList.add('d-block');
 
     }
-    
-    
-
-
-    
-
 })
-
-
-// comparing total savings with the remaining balance 
-// function remainder(){
-//     const remaining = parseFloat(catchId('balance').innerText);
-
-//     const savings = catchId('saved-amount');
-
-//     const balance = catchId("remaining-balance")
-//     console.log('balance');
-
-//     if(savings < balance){
-//         const balanceRemain =  balance - savings ;
-        
-
-//     }
-//     remaining.innerText = balanceRemain;
-// }
-
-
-
-// function verifyInputs(){
-//     const failMessage = catchId('saving-fail');
-//     const failError = catchId('excess-expense');
-    
-//     const remainder =catchId('remaining-balance').innerText;
-//     const savings = catchId('saved-amount').innerText;
-
-//     if(savings > remainder){
-//         failMessage.style.display = 'none';
-//         failError.style.display = 'block'
-        
-//     }
-//     else{
-//         failMessage.style.display = 'block';
-//         failError.style.display = 'block'
-
-//     }
-
-// }
-// function verifyOtherInputs(){
-//     const failMessage = catchId('saving-fail');
-//     const income = catchId('total-income');
-//     const expenseMessage = catchId('total-expense').innerText;
-//     const failError = catchId('excess-expense');
-
-//     if(expenseMessage > income){
-//         failMessage.style.display = 'block';
-//         failError.style.display = 'none'
-        
-//     }
-//     else{
-//         failMessage.style.display = 'block';
-//         failError.style.display = 'block';
-
-//     }
-
-
-// }
 
